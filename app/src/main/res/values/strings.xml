@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BluetoothDemo</string>
+    <string name="bluetooth_example">Bluetooth Example</string>
+    <string name="turn_on">Turn On</string>
+    <string name="get_visable">Get Visable</string>
+    <string name="list_devices">List devices</string>
+    <string name="turn_off">Turn Off</string>
+    <string name="paired_devices">Paired Devices</string>
+</resources>
