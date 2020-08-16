@@ -15,6 +15,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Set;
 
+/* based on https://www.tutorialspoint.com/android/android_bluetooth.htm  */
+
 public class MainActivity extends AppCompatActivity {
 
     Button b1, b2, b3, b4;
