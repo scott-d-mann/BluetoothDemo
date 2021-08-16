@@ -29,19 +29,23 @@
 
             <Button
                 android:id="@+id/button"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="on"
-                android:text="@string/turn_on" />
+                android:text="@string/turn_on"
+                android:textColor="#5E35B1" />
 
             <Button
                 android:id="@+id/button2"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="visible"
                 android:layout_weight="1"
-                android:text="@string/get_visable" />
+                android:onClick="visible"
+                android:text="@string/get_visable"
+                android:textColor="#5E35B1" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,19 +55,23 @@
 
             <Button
                 android:id="@+id/button3"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="list"
                 android:layout_weight="1"
-                android:text="@string/list_devices" />
+                android:onClick="list"
+                android:text="@string/list_paired_devices"
+                android:textColor="#5E35B1" />
 
             <Button
                 android:id="@+id/button4"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="off"
                 android:layout_weight="1"
-                android:text="@string/turn_off" />
+                android:onClick="off"
+                android:text="@string/turn_off"
+                android:textColor="#5E35B1" />
 
         </LinearLayout>
 

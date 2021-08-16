@@ -6,4 +6,5 @@
     <string name="list_devices">List devices</string>
     <string name="turn_off">Turn Off</string>
     <string name="paired_devices">Paired Devices</string>
+    <string name="list_paired_devices">List Paired Devices</string>
 </resources>

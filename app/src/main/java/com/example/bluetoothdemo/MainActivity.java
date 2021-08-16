@@ -1,7 +1,12 @@
 package com.example.bluetoothdemo;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
@@ -40,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void on(View v) {
         if (!BA.isEnabled()) {
-            Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(turnOn, 0);
+            BA.enable();
             Toast.makeText(getApplicationContext(), "Turned on", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getApplicationContext(), "Already on", Toast.LENGTH_LONG).show();
@@ -53,10 +57,21 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Turned off", Toast.LENGTH_LONG).show();
     }
 
+    ActivityResultLauncher<Intent> discoverableActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        Toast.makeText(getApplicationContext(), "Phone Visable", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
 
     public void visible(View v) {
         Intent getVisible = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-        startActivityForResult(getVisible, 0);
+        discoverableActivityResultLauncher.launch(getVisible);
     }
 
 
