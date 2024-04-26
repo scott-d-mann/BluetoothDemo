@@ -78,12 +78,12 @@ public class MainActivity extends AppCompatActivity {
     public void list(View v) {
         pairedDevices = BA.getBondedDevices();
 
-        ArrayList list = new ArrayList();
+        ArrayList<String> list = new ArrayList<>();
 
         for (BluetoothDevice bt : pairedDevices) list.add(bt.getName());
         Toast.makeText(getApplicationContext(), "Showing Paired Devices", Toast.LENGTH_SHORT).show();
 
-        final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
 
         lv.setAdapter(adapter);
     }
